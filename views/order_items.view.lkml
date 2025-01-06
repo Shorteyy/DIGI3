@@ -65,7 +65,8 @@ view: order_items {
 
   parameter: price_parameter {
     default_value: "SUM"
-    type: number
+    type: unquoted
+
     allowed_value: {
       label: "sum_price"
       value: "SUM"
