@@ -54,8 +54,16 @@ view: inventory_items {
     timeframes: [raw, time, date, week, month, quarter, year]
     sql: ${TABLE}.sold_at ;;
   }
+  # Measures
+  measure:  sum_of_retail_price{
+    type:  sum
+    sql: ${product_retail_price} ;;
+    description: "Sum of the retail price"
+    value_format: "$"
+  }
   measure: count {
     type: count
     drill_fields: [id, product_name, products.name, products.id, order_items.count]
   }
+
 }
