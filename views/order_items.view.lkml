@@ -85,6 +85,7 @@ view: order_items {
   }
   measure: parametized_sale_price {
     type: number
+    label_from_parameter: price_parameter
     sql:{% parameter price_parameter %}(${sale_price}) ;;
   }
   measure: count {
