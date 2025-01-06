@@ -82,3 +82,5 @@ explore: orders {
 }
 
 explore: users {}
+
+explore : distribution_centers {}
