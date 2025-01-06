@@ -62,6 +62,31 @@ view: order_items {
     description: "Sum sale price"
     value_format: "$"
   }
+
+  parameter: price_parameter {
+    default_value: "SUM"
+    type: number
+    allowed_value: {
+      label: "sum_price"
+      value: "SUM"
+    }
+    allowed_value: {
+      label: "max_price"
+      value: "MAX"
+    }
+    allowed_value: {
+      label: "min_price"
+      value: "MIN"
+    }
+    allowed_value: {
+      label: "avg_price"
+      value: "AVG"
+    }
+  }
+  measure: parametized_sale_price {
+    type: number
+    sql:{% parameter price_parameter %}(${sale_price}) ;;
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
