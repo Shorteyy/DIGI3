@@ -55,6 +55,13 @@ view: order_items {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
+
+  measure: sum_sale_price {
+    type: sum
+    sql:  ${sale_price} ;;
+    description: "Sum sale price"
+    value_format: "$"
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
@@ -63,16 +70,16 @@ view: order_items {
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	users.last_name,
-	users.id,
-	users.first_name,
-	inventory_items.id,
-	inventory_items.product_name,
-	products.name,
-	products.id,
-	orders.order_id
-	]
+  id,
+  users.last_name,
+  users.id,
+  users.first_name,
+  inventory_items.id,
+  inventory_items.product_name,
+  products.name,
+  products.id,
+  orders.order_id
+  ]
   }
 
 }
