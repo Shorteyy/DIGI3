@@ -11,9 +11,7 @@ view: products {
     type: string
     sql: ${TABLE}.brand ;;
     html:
-    <a href="www.google.be/search?q={{value}}" target=_blank>{{value}}</a>
-          ;;
-
+    <a href="www.google.be/search?q={{value}}" target=_blank>{{value}}</a>;;
   }
   dimension: category {
     type: string
